@@ -9,13 +9,17 @@ import MessageForm from '../containers/message_form';
 class MessageList extends Component {
   render() {
     return (
-      <div className="message-list">
-        <h6>Channel name</h6>
+      <div className="channel-container">
+        <div className="channel-title">
+         <span>selected Channel name</span>
+        </div>
+        <div className="channel-content">
         {
           this.props.messages.map((message) => {
             return <Message key={message.created_at} message={message} />;
           })
         }
+        </div>
         <MessageForm />
       </div>
     );

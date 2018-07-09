@@ -5,11 +5,13 @@ import MessageList from '../containers/message_list';
 
 const App = () => {
   return (
-    <div>
-      <img src="https://niam0r.github.io/profile/images/r.jpg" alt="" className="logo"/>
-      <p>App</p>
-      <ChannelList  />
-      <MessageList  />
+    <div className="app-wrapper">
+      <div className="logo-container">
+        <img src="https://niam0r.github.io/profile/images/r.jpg" alt="" className="logo"/>
+        <p>App</p>
+        <ChannelList  />
+        <MessageList  />
+      </div>
     </div>
   );
 };
