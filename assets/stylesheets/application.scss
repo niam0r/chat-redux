@@ -2,6 +2,27 @@ body {
   font-family: Helvetica;
 }
 .app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  background: #dbdbdb;
+  display: flex;
+  width: 100%;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.channel-list {
+  width: 30%;
+}
+
+.message-list {
+  width: 60%;
+  .message {
+
+  }
+
+  .message-form {
+
+  }
 }
