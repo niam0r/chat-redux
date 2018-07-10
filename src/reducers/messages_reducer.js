@@ -6,9 +6,7 @@ export default function(state = null, action) {
       return action.payload.messages;
     }
     case MESSAGE_POSTED: {
-      const copiedState = [...state];
-      copiedState.push(action.payload);
-      return copiedState;
+      return [...state, action.payload];
     }
     case CHANNEL_SELECTED: {
       return []; // clearing view because of channel change
