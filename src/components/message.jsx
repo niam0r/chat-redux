@@ -5,8 +5,11 @@ const Message = (props) => {
   const time = new Date(created_at).toLocaleTimeString();
   return (
     <div className="message-container">
-      <p>{author} - {time}</p>
-      <p>content}</p>
+      <i className="author">
+        <span>{author}</span>
+        <small>{time}</small>
+      </i>
+      <p>{content}</p>
     </div>
   );
 };

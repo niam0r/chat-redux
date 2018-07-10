@@ -5,9 +5,9 @@ import MessageList from '../containers/message_list';
 
 const App = () => {
   return (
-    <div className="app-wrapper">
+    <div className="messaging-wrapper">
       <div className="logo-container">
-        <img src="https://niam0r.github.io/profile/images/r.jpg" alt="" className="logo"/>
+        <img src="https://niam0r.github.io/profile/images/r.jpg" alt="logo" className="messaging-logo"/>
         <p>App</p>
         <ChannelList  />
         <MessageList  />
@@ -17,6 +17,3 @@ const App = () => {
 };
 
 export default App;
-
-// channels={this.state.channels}
-// messages={this.state.messages}
