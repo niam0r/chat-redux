@@ -36,5 +36,5 @@ export function selectChannel(channel) {
   return {
     type: CHANNEL_SELECTED,
     payload: channel
-  }
+  };
 }

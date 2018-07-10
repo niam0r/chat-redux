@@ -7,10 +7,10 @@ const App = () => {
   return (
     <div className="messaging-wrapper">
       <div className="logo-container">
-        <img src="https://niam0r.github.io/profile/images/r.jpg" alt="logo" className="messaging-logo"/>
+        <img src="https://niam0r.github.io/profile/images/r.jpg" alt="logo" className="messaging-logo" />
       </div>
-        <ChannelList  />
-        <MessageList  />
+      <ChannelList />
+      <MessageList />
     </div>
   );
 };

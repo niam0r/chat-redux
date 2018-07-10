@@ -4,8 +4,14 @@ import { connect } from 'react-redux';
 import { selectChannel, fetchMessages } from '../actions/index';
 
 class ChannelList extends Component {
-  handleClick = () {
-    this.selectChannel();
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selectedChannel !== this.props.selectedChannel) {
+      this.props.fetchMessages(nextProps.selectedChannel);
+    }
+  }
+
+  handleClick = (channel) => {
+    this.props.selectChannel(channel);
   }
 
   render() {
@@ -13,10 +19,16 @@ class ChannelList extends Component {
       <div className="channels-container">
         <span>Redux Chat</span>
         <ul>
-          {this.props.channels.map(channel => {
-            return <li
-                     onClick={this.handleClick}
-                    >#{channel}</li>;
+          {this.props.channels.map((channel) => {
+            return (
+              <li
+                key={channel}
+                className={channel === this.props.selectedChannel ? 'active' : null}
+                onClick={() => this.handleClick(channel)}
+              >
+                #{channel}
+              </li>
+            );
           })}
         </ul>
       </div>
@@ -32,7 +44,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectChannel, fetchMessages }, dispatch)
+  return bindActionCreators({ selectChannel, fetchMessages }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChannelList);
