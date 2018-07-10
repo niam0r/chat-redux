@@ -8,19 +8,31 @@ import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
   componentWillMount() {
-    this.props.fetchMessages();
+    this.fetchMessages();
+  }
+
+  componentDidMount() {
+    setInterval(this.fetchMessages, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.refresher);
+  }
+
+  fetchMessages = () => {
+    this.props.fetchMessages(this.props.selectedChannel);
   }
 
   render() {
     return (
       <div className="channel-container">
         <div className="channel-title">
-         <span>{this.props.selectedChannel}</span>
+         <span>Channel #{this.props.selectedChannel}</span>
         </div>
         <div className="channel-content">
         {
           this.props.messages.map((message) => {
-            return <Message key={message.created_at} message={message} />;
+            return <Message key={message.id} message={message} />;
           })
         }
         </div>
