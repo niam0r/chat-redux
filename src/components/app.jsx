@@ -8,10 +8,9 @@ const App = () => {
     <div className="messaging-wrapper">
       <div className="logo-container">
         <img src="https://niam0r.github.io/profile/images/r.jpg" alt="logo" className="messaging-logo"/>
-        <p>App</p>
+      </div>
         <ChannelList  />
         <MessageList  />
-      </div>
     </div>
   );
 };
