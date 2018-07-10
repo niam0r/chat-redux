@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 class MessageForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { value: '' };
+  }
+
+  handleSubmit = () => {
+    this.createMessage(this.props.selectedChannel, this.props.currentUser, this.state.value);
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="channel-editor">
@@ -14,5 +24,17 @@ class MessageForm extends Component {
     );
   }
 }
+
+function mapStateToProps (state) {
+  return {
+    channels: state.channels,
+    currentUser: state.currentUser,
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  // body...
+}
+
 
 export default MessageForm;
