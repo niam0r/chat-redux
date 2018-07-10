@@ -4,13 +4,19 @@ import { connect } from 'react-redux';
 import { selectChannel, fetchMessages } from '../actions/index';
 
 class ChannelList extends Component {
+  handleClick = () {
+    this.selectChannel();
+  }
+
   render() {
     return (
       <div className="channels-container">
         <span>Redux Chat</span>
         <ul>
           {this.props.channels.map(channel => {
-            return <li>#{channel}</li>;
+            return <li
+                     onClick={this.handleClick}
+                    >#{channel}</li>;
           })}
         </ul>
       </div>
