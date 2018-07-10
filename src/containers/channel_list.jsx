@@ -18,14 +18,14 @@ class ChannelList extends Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
     channels: state.channels,
     selectedChannel: state.selectedChannel
   };
 }
 
-function mapDispatchToProps (dispatch) {
+function mapDispatchToProps(dispatch) {
   return bindActionCreators({ selectChannel, fetchMessages }, dispatch)
 }
 

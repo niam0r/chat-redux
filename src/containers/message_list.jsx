@@ -7,11 +7,15 @@ import Message from '../components/message';
 import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
+  componentWillMount() {
+    this.props.fetchMessages();
+  }
+
   render() {
     return (
       <div className="channel-container">
         <div className="channel-title">
-         <span>selected Channel name</span>
+         <span>{this.props.selectedChannel}</span>
         </div>
         <div className="channel-content">
         {
