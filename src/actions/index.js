@@ -1,6 +1,6 @@
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const MESSAGE_POSTED = 'MESSAGE_POSTED';
-export const SELECT_CHANNEL = 'SELECT_CHANNEL';
+export const CHANNEL_SELECTED = 'CHANNEL_SELECTED';
 
 const BASE_URL = 'https://wagon-chat.herokuapp.com';
 
@@ -34,7 +34,7 @@ export function createMessage(channel, author, content) {
 
 export function selectChannel(channel) {
   return {
-    type: SELECTED_CHANNEL,
+    type: CHANNEL_SELECTED,
     payload: channel
   }
 }
