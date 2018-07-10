@@ -12,7 +12,11 @@ class MessageList extends Component {
   }
 
   componentDidMount() {
-    setInterval(this.fetchMessages, 5000);
+    this.refresher = setInterval(this.fetchMessages, 5000);
+  }
+
+  componentDidUpdate() {
+    this.list.scrollTop = this.list.scrollHeight;
   }
 
   componentWillUnmount() {
@@ -29,7 +33,7 @@ class MessageList extends Component {
         <div className="channel-title">
          <span>Channel #{this.props.selectedChannel}</span>
         </div>
-        <div className="channel-content">
+        <div className="channel-content" ref={(list) => { this.list = list; }}>
         {
           this.props.messages.map((message) => {
             return <Message key={message.id} message={message} />;
