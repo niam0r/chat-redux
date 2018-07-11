@@ -40,7 +40,7 @@ class MessageList extends Component {
             })
           }
         </div>
-        <MessageForm channelFromParams={this.props.channelFromParams}/>
+        <MessageForm channelFromParams={this.props.channelFromParams} />
       </div>
     );
   }
