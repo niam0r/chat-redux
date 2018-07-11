@@ -8,9 +8,6 @@ export default function(state = null, action) {
     case MESSAGE_POSTED: {
       return [...state, action.payload];
     }
-    case CHANNEL_SELECTED: {
-      return []; // clearing view because of channel change
-    }
     default:
       return state;
   }
